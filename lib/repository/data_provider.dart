@@ -3,7 +3,6 @@ import 'package:weight_tracker/model/Weight.model.dart';
 import 'package:weight_tracker/repository/database_helper.dart';
 
 class DataProvider with ChangeNotifier {
-
   List<WeightModel> _items = [];
   final tableName = 'my_table';
   String _averageWeight = "0.0";
@@ -22,7 +21,8 @@ class DataProvider with ChangeNotifier {
           .map((item) => WeightModel(
               weight: double.parse(item['weight']), date: item['date']))
           .toList();
-      _items.sort((a,b) =>  DateTime.parse(b.date).compareTo(DateTime.parse(a.date)) );
+      _items.sort(
+          (a, b) => DateTime.parse(b.date).compareTo(DateTime.parse(a.date)));
       calculateAverage();
       notifyListeners();
     }
@@ -34,8 +34,8 @@ class DataProvider with ChangeNotifier {
       total = total + items[i].weight;
     }
 
-    if(items.length == 0){
-      _averageWeight  = "0.0";
+    if (items.length == 0) {
+      _averageWeight = "0.0";
     } else {
       _averageWeight = (total / items.length).toStringAsFixed(1);
     }

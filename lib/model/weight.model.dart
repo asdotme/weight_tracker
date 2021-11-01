@@ -15,7 +15,7 @@ class WeightModel {
   }
 
   WeightModel.fromMapObject(Map<String, dynamic>? map) {
-    if(map!=null) {
+    if (map != null) {
       this.weight = double.parse(map['weight']);
       this.date = map['date'];
     }

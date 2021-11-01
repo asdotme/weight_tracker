@@ -1,16 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:weight_tracker/repository/data_provider.dart';
-import 'package:weight_tracker/repository/database_helper.dart';
-import 'package:weight_tracker/routes.dart';
 import 'package:weight_tracker/service/data_service.dart';
 
 class WeightRegister extends StatelessWidget {
   static const routeName = "weight_register";
   final _formKey = GlobalKey<FormState>();
   final nameController = TextEditingController();
-
-//  const WeightRegister(Key? key): super(key: key);
 
   @override
   Widget build(BuildContext context) {
